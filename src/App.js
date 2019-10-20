@@ -1,0 +1,34 @@
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link,
+} from 'react-router-dom';
+import styled from 'styled-components';
+import logo from './logo.svg';
+import './App.css';
+import MoviesList from './MoviesList';
+import MovieDetail from './MovieDetail';
+
+const App = () => (
+  <Router>
+    <div className="App">
+      <header className="App-header">
+        <Link to="/React-Movie-Database/">
+          <Logo src={logo} alt="React Movies" />
+        </Link>
+      </header>
+      <Switch>
+        <Route exact path="/React-Movie-Database/" component={MoviesList} />
+        <Route path="/React-Movie-Database/:id" render={(props) => <MovieDetail key={Date.now()} {...props} />} />
+      </Switch>
+    </div>
+  </Router>
+);
+
+export default App;
+
+const Logo = styled.img`
+  height: 50px;
+`;

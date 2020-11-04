@@ -1,27 +1,18 @@
 import React from 'react';
-import {
-    BrowserRouter as HashRouter,
-    Route,
-    Switch,
-    Link,
-} from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import styled from 'styled-components';
 // import './App.css';
 import MoviesList from './MoviesList';
 import MovieDetail from './MovieDetail';
 
 const App = () => (
-    <HashRouter>
+    <Router basename="/">
         <div className="App">
             <Header>
                 <Link to="/">The Movie Database</Link>
             </Header>
             <Switch>
-                <Route
-                    exact
-                    path="/"
-                    component={MoviesList}
-                />
+                <Route exact path="/" component={MoviesList} />
                 <Route
                     path="/:id"
                     render={(props) => (
@@ -30,7 +21,7 @@ const App = () => (
                 />
             </Switch>
         </div>
-    </HashRouter>
+    </Router>
 );
 
 export default App;

@@ -7,7 +7,7 @@ const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
 
 const Movie = ({ movie }) => (
     <PopularMovie>
-        <Link key={movie.id} to={`/React-Movie-Database/${movie.id}`}>
+        <Link key={movie.id} to={`/${movie.id}`}>
             <img src={`${POSTER_PATH}${movie.poster_path}`} alt={movie.title} />
         </Link>
     </PopularMovie>

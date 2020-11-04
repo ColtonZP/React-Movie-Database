@@ -11,7 +11,7 @@ const Movie = ({ movie }) => (
         <NewMovieCard>
             <h1>{movie.title}</h1>
             <p>{`${movie.overview}`}</p>
-            <Link to={`/React-Movie-Database/${movie.id}`}>Learn More</Link>
+            <Link to={`/${movie.id}`}>Learn More</Link>
         </NewMovieCard>
     </MovieDiv>
 );

@@ -1,27 +1,36 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import {
+    BrowserRouter as HashRouter,
+    Route,
+    Switch,
+    Link,
+} from 'react-router-dom';
 import styled from 'styled-components';
 // import './App.css';
 import MoviesList from './MoviesList';
 import MovieDetail from './MovieDetail';
 
 const App = () => (
-	<Router>
-		<div className="App">
-			<Header>
-				<Link to="/React-Movie-Database/">
-					The Movie Database
-				</Link>
-			</Header>
-			<Switch>
-				<Route exact path="/React-Movie-Database/" component={MoviesList} />
-				<Route
-					path="/React-Movie-Database/:id"
-					render={props => <MovieDetail key={Date.now()} {...props} />}
-				/>
-			</Switch>
-		</div>
-	</Router>
+    <HashRouter>
+        <div className="App">
+            <Header>
+                <Link to="/">The Movie Database</Link>
+            </Header>
+            <Switch>
+                <Route
+                    exact
+                    path="/"
+                    component={MoviesList}
+                />
+                <Route
+                    path="/:id"
+                    render={(props) => (
+                        <MovieDetail key={Date.now()} {...props} />
+                    )}
+                />
+            </Switch>
+        </div>
+    </HashRouter>
 );
 
 export default App;

@@ -110,23 +110,31 @@ const MovieWrapper = styled.div`
 `;
 
 const Cast = styled.div`
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     width: 80%;
-    grid-gap: calc(100% / 10);
+    grid-gap: 20px;
     img {
-        height: 214px;
+        width: 100%;
+        max-width: 200px;
         display: block;
+        margin: 0 auto;
     }
 `;
 
 const Similar = styled.div`
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     width: 80%;
-    grid-gap: calc(100% / 10);
+    grid-gap: 20px;
+    img {
+        width: 100%;
+        max-width: 200px;
+        display: block;
+        margin: 0 auto;
+    }
 `;
 
 const MovieInfo = styled.div`
